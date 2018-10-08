@@ -156,22 +156,6 @@
 //
 let str = "lllllkdfjkii"
 let films = {}
-//   {
-//     title: 'Psycho',
-//     director: 'Alfred Hitchcock',
-//     status: false
-//   },
-//   {
-//     title: 'Citizen Kane',
-//     director: 'Orson Welles',
-//     status: false
-//   },
-//   {
-//     title: 'The Usual Suspects',
-//     director: 'Bryan Singer',
-//     status: true
-//   }
-// ]
 
 for(let i=0; i<str.length; i++){
   if(films[str[i]] === undefined){
