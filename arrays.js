@@ -120,21 +120,21 @@
 // // The block will log an array with all the numbers, inclusive, between min and max, , going up in increments equal to step.
 // // If no step value is provided, the increment will be 1.
 //
-// let min = 2;
-// let max = 10;
-// let step = 5
-// let rangeWithStep = []
-//
-// if (!step){
-// console.log("it worked");
-// }
-//
-// for(i=min; i<=max; i+=step){
-//   if(step) {
-//     rangeWithStep.push(i)
-//   }
-// }
-//   console.log(rangeWithStep);
+let min = 2;
+let max = 10;
+let step = 5
+let rangeWithStep = []
+
+if (!step){
+console.log("increment by 1");
+}
+
+for(i=min; i<=max; i+=step){
+  if(step) {
+    rangeWithStep.push(i)
+  }
+}
+  console.log(rangeWithStep);
 
 // 14. Write a `doubleTrouble` code block that takes in a varialbe array of numbers.
 // The block should log a new array that doubles every number from the original array.
