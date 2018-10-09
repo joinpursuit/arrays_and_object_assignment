@@ -246,12 +246,22 @@ let target = 7;
 
 for (let i = 0; i < age.length - 1; i++){
   for(let j = 1; j < age.length; j++){
-
-
   if (age[i] + age[j] === target){
-
-
   console.log(i, j)
 }
 }
 }
+// Reed correction
+
+let age = [2,4,5,3,5,6,1];
+let target = 7;
+let answer = []
+
+for (let i = 0; i < age.length - 1; i++){
+  for (let j = i +1; j < age.length; j++){
+    if (age[i] + age[j] === target){
+      answer.push([i, j])
+    }
+  }
+}
+console.log(answer);

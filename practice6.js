@@ -1,15 +1,33 @@
-let str = "hello";
+let age = [2,4,5,3,5,6,1];
+let target = 7;
+let answer = []
 
-let charCount= {};
-
-for (let i = 0; i < str.length; i++){
-  if (!charCount[str[i]]){
-    charCount[str[i]] = 1
-  } else {
-    charCount[str[i]] += 1;
+for (let i = 0; i < age.length - 1; i++){
+  for (let j = i +1; j < age.length; j++){
+    if (age[i] + age[j] === target){
+      answer.push([i, j])
+    }
   }
 }
-console.log(charCount)
+console.log(answer);
+
+
+
+
+
+
+// let str = "hello";
+//
+// let charCount= {};
+//
+// for (let i = 0; i < str.length; i++){
+//   if (!charCount[str[i]]){
+//     charCount[str[i]] = 1
+//   } else {
+//     charCount[str[i]] += 1;
+//   }
+// }
+// console.log(charCount)
 
 
 
