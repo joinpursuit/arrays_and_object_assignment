@@ -16,8 +16,8 @@
 
 
 
-```
-<!-- 2. Add a color quality to the cat from the previous question. -->
+<!-- ```
+<!-- 2. Add a color quality to the cat from the previous question. --> -->
 
 2.
 // let cat = {
