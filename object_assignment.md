@@ -7,8 +7,17 @@
    species: 'Catus'
 }
 ```
+console.log(cat.species);
+
+
 2. Add a color quality to the cat from the previous question.
+
+cat.colorQuality = "Good Color";
+
 3. How do you check if our cat object has the propery texture?
+
+console.log(cat.propertyTexture)
+
 4. Loop through the following object and log all of directors.
 ``` js
 let films = [
@@ -28,6 +37,12 @@ let films = [
 ]
 
 ```
+for (var i =0; i < films.length; i++){
+  console.log(films[i].directors);
+}
+
+
+
 5. What will this code log?
 ```js
 let p1 = {
@@ -42,6 +57,8 @@ console.log(p1 === p2)
 
 ```
 
+It will log false
+
 
 #### Recipe
 
@@ -53,6 +70,15 @@ name: Mole
 servings: 2
 ingredients: cinnamon, cumin, cocoa
 ```
+
+let recipe = {
+  name: "breakfast",
+  servings: 1,
+  ingredients:["milk", "cereal"]
+}
+console.table(recipe);
+
+
 
 #### getProps
 Write a code block that takes an object variable and logs all the keys as an array.
