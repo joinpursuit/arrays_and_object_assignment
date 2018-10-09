@@ -1,72 +1,120 @@
 # Object Exercises
 
 1. Log the cats species.
+
+
 //------------//
+
+
 let cat = {
+
+
   name: 'Larry',
+
+
   genus: 'Felis',
+
+
   species: 'Catus',
+
 }
+
 
 console.log(cat.species)
+
+
 //-------------//
 
+
 2. Add a color quality to the cat from the previous question.
+
+
 //---------//
 
+
 let cat = {
+
   name: 'Larry',
+
+
   color: 'White and Black',
+
+
   genus: 'Felis',
+
+
   species: 'Catus',
+
+
 }
+
 
 console.log(cat.color)
 
+
 //-------------//
+
+
 3. How do you check if our cat object has the propery texture?
+
+
 //---------//
 
-let cat = {
-  name: 'Larry',
-  color: 'White and Black',
-  genus: 'Felis',
-  species: 'Catus',
-}
-console.log(cat.texture);
-//-----------//
-4. Loop through the following object and log all of directors.
-``` js
-let films = [
- {
-   name: 'Psycho',
-   director: 'Alfred Hitchcock',
-   released: 1960
- }, {
-   name: 'Citizen Kane',
-   director: 'Orson Welles',
-   released: 1941
- }, {
-   name: 'The Usual Suspects',
-   director: 'Bryan Singer',
-   released: 1995
- }
-]
 
-```
+let cat = {
+
+
+  name: 'Larry',
+
+
+  color: 'White and Black',
+
+  genus: 'Felis',
+
+
+  species: 'Catus',
+
+
+}
+
+
+console.log(cat.texture);
+
+
+//-----------//
+
+
+
+4. Loop through the following object and log all of directors.
+
+
+
 //--------//
+
+
 let directors = [];
+
+
 
 for(let i = 0 ; i <films.length ; i++) {
 
+
+
   directors.push(films[i].director);
+
 
 }
 
+
  console.log(directors)
 
+
 //----------//
+
+
+
 5. What will this code log?
+
 ```js
 let p1 = {
   name: 'Joe'
@@ -80,20 +128,22 @@ console.log(p1 === p2)
 
 ```
 //----------//
+
+
 False
+
+
 //--------//
+
+
 #### Recipe
 
 * Create an object to hold information on your favorite recipe. It should have the following properties: `name`, `servings`, and `ingredients` (an array).
 * Create a loop that logs the recipe information, so it looks like:
 
-```javascript
-name: Mole
-servings: 2
-ingredients: cinnamon, cumin, cocoa
-```
-//-------------//
 
+//-------------//
+```
 let favRecipe = {
   name: "pp&j",
   servings: 4,
@@ -106,11 +156,17 @@ let favRecipe = {
 
 {  console.log(key + ": "  + favRecipe[key])};
 
+```
+
 //----------//
+
+
 #### getProps
 Write a code block that takes an object variable and logs all the keys as an array.
 
+
 //-------------------//
+```
 
 let favRecipe = {
   name: "pp&j",
@@ -120,12 +176,20 @@ let favRecipe = {
 
  let favRecipeKeys = Object.keys(favRecipe);
  console.log(favRecipeKeys)
+
+
+ ```
 //------//
+
 
 #### getValues
 Write a code block that takes an object variable and logs all the values as an array.
 
+
+
 //---------//
+
+```
 
 let favRecipe = {
   name: "pp&j",
@@ -135,13 +199,18 @@ let favRecipe = {
 
  let favRecipeValues = Object.values(favRecipe);
  console.log(favRecipeValues)
+
+ ```
 //-------//
+
 
 #### getObjLength
 Write a code block the logs the number of properties an object has.
 
+
 //-----------//
 
+```
 
 let favRecipe = {
   name: "pp&j",
@@ -152,7 +221,10 @@ let favRecipe = {
  let favRecipeKeys = Object.keys(favRecipe);
  console.log(favRecipeKeys.length);
 
+```
+
  //-----------//
+
 
 #### WatchList
 Create an array of films, where each film has the following properties: title, director, and a boolean indicating if you started watching it.
@@ -162,6 +234,8 @@ Create a code block that iterates over the array and logs whether the film was w
 and if not, log
 
 `You still need to watch "Wonder Woman" by director Patty Jenkins. `
+
+```
 //------------//
 
 let films = [
@@ -196,13 +270,17 @@ for (let i = 0; i < films.length; i++) {
   }
 }
 
+ ```
+
 //--------------//
+
 
 #### characterCount
 Write a block of code that takes a string varaible and counts the occurance of each character in the string. Use an object to keep track of the counts.
 
-//--------------//
 
+//--------------//
+```
 
 let str = "kittens cute";
 let result = {};
@@ -222,5 +300,7 @@ console.log(char[i], result)
 
 }
 console.log(result)
+
+```
 
 //----------//
