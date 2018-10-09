@@ -128,17 +128,18 @@ for(let i = 0; i < films.length; i++) {
 
 // 5 characterCount)
 
-let str = "Hello there sir";
-let characterCount = {};
-let counterCount = 0
+let str = "Hello there";
+let array = [];
 
-for (let i = 0; i < str.length; i++) {
-  let indvChar = str[i];
-  for (let j = 0; i < str.length; i++) {
-    if (str[j] === str[i]) {
-      counterCount = counterCount + 1;
+array = str.split("");
+let characterCount = {};
+
+for (let i = 0; i < array.length; i++) {
+    if (!characterCount[array[i]]) {
+      characterCount[array[i]] = 1;
+    } else {
+      characterCount[array[i]] = characterCount[array[i]] + 1;
     }
   }
-  characterCount[indvChar] = counterCount;
-}
+
 console.log(characterCount);
