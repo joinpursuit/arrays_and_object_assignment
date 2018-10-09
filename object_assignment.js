@@ -110,4 +110,16 @@
 // } else console.log('Go get Netflix')
 // }
 //////////////////////////////////////////////////
-LAST QUESTION IS IMPOSSIBRU TO SOLVE
+let var1 = 'pokemoninvasion'
+let answer = {};
+let word = [];
+for(let i = 0; i < var1.length; i++){
+  word.push(var1[i])
+} for(let i = 0; i < word.length; i++){
+  if (!answer[word[i]]) {
+    answer[word[i]] = 1;
+  } else {
+    answer[word[i]] += 1;
+  }
+}
+console.log(answer)
