@@ -119,16 +119,15 @@ for (let i = 0; i < films.length; i++) {
     console.log ("You still need to watch " + films[i].title + "directed by " + films[i].director);
   }
 }
-
-//Question 11(characterCount)
-let arr = "abcdabcdabcd";
-let characterCount = {
-  a:0,
-  b:0,
-  c:0,
-  d:0
-}
-for (let i =0, i < arr.length; i++) {
-//To be continue.
-}
 */
+//Question 11(characterCount)
+let arr = ["a","b","d","a","b","c"];
+let chaCount = {}
+for (let i = 0; i < arr.length; i++) {
+  if (!chaCount[arr[i]]) {
+    chaCount[arr[i]] = 1;
+  } else {
+    chaCount[arr[i]] += 1;
+  }
+}
+console.log(chaCount);
