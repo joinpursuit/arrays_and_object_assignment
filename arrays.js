@@ -102,6 +102,15 @@
 // }
 // console.log(sum);
 
+let sumArray = [1, 2, 3, 4, 5, 6]
+let sum = 0
+
+for(let i=0; i<sumArray.length; i++){
+  sum += sumArray[i]
+}
+console.log(sum);
+
+
 // 12. Write a `range` code block that takes two number variables: min and max.
 // The block will log an array with all the numbers, inclusive, between min and max.
 //
@@ -120,21 +129,21 @@
 // // The block will log an array with all the numbers, inclusive, between min and max, , going up in increments equal to step.
 // // If no step value is provided, the increment will be 1.
 //
-let min = 2;
-let max = 10;
-let step = 5
-let rangeWithStep = []
-
-if (!step){
-console.log("increment by 1");
-}
-
-for(i=min; i<=max; i+=step){
-  if(step) {
-    rangeWithStep.push(i)
-  }
-}
-  console.log(rangeWithStep);
+// let min = 2;
+// let max = 10;
+// let step = 5
+// let rangeWithStep = []
+//
+// if (!step){
+// console.log("increment by 1");
+// }
+//
+// for(i=min; i<=max; i+=step){
+//   if(step) {
+//     rangeWithStep.push(i)
+//   }
+// }
+//   console.log(rangeWithStep);
 
 // 14. Write a `doubleTrouble` code block that takes in a varialbe array of numbers.
 // The block should log a new array that doubles every number from the original array.
@@ -149,22 +158,22 @@ for(i=min; i<=max; i+=step){
 
 
 // 15. Write a code block that takes in two varaibles. A target, and an array. Console log the indicies (as an array) of the elements that add up to the target. Exactly two indicies must be logged.
-
-let target = 11
-let arr = [5,4,6]
-let block = []
-let result;
-
-for (let i = 0; i < arr.length; i++){
-  if (arr[0] + arr[1] === target){
-    result = [0, 1]
-    // console.log([0, 1]);
-  } else if (arr[0] + arr[2] === target){
-    result = [0, 2]
-    // console.log([0,2]);
-  } else if (arr[1] + arr[2] === target){
-    result = [1, 2]
-    // console.log([1,2]);
-  }
-}
-console.log(result);
+//
+// let target = 11
+// let arr = [5,4,6]
+// let block = []
+// let result;
+//
+// for (let i = 0; i < arr.length; i++){
+//   if (arr[0] + arr[1] === target){
+//     result = [0, 1]
+//     // console.log([0, 1]);
+//   } else if (arr[0] + arr[2] === target){
+//     result = [0, 2]
+//     // console.log([0,2]);
+//   } else if (arr[1] + arr[2] === target){
+//     result = [1, 2]
+//     // console.log([1,2]);
+//   }
+// }
+// console.log(result);
