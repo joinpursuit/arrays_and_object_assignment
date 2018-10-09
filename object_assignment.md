@@ -166,5 +166,47 @@ and if not, log
 
 `You still need to watch "Wonder Woman" by director Patty Jenkins. `
 
+let films = [
+  {
+    name: 'spiderman',
+    director: 'jon watts',
+    watched:false
+  },
+  {
+    name: 'superman',
+    director: 'tudor giurgiu',
+    watched:false
+  },
+  {
+    name:'wonder woman',
+    director: 'patty jenkins',
+    watched:true
+  }
+]
+
+for (let i = 0; i < films.length; i++){
+  if (films[i].watched === true){
+    console.log("you already watched " + films[i].name + " by the director " + films[i].director)
+  } else {
+    console.log("you still need to watched " + films[i].name + " by director " + films[i].director)
+  }
+}
+
+
+
 #### characterCount
-Write a block of code that takes a string variable and counts the occurance of each character in the string. Use an object to keep track of the counts.
+Write a block of code that takes a string variable and counts the occurrance of each character in the string. Use an object to keep track of the counts.
+
+
+let str = "hello";
+
+let charCount= {};
+
+for (let i = 0; i < str.length; i++){
+  if (!charCount[str[i]]){
+    charCount[str[i]] = 1
+  } else {
+    charCount[str[i]] += 1;
+  }
+}
+console.log(charCount)
