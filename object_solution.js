@@ -119,7 +119,7 @@ for (let i = 0; i < films.length; i++) {
     console.log ("You still need to watch " + films[i].title + "directed by " + films[i].director);
   }
 }
-*/
+
 //Question 11(characterCount)
 let arr = "abcdabcdabcd";
 let characterCount = {
@@ -129,5 +129,6 @@ let characterCount = {
   d:0
 }
 for (let i =0, i < arr.length; i++) {
-
+//To be continue.
 }
+*/
