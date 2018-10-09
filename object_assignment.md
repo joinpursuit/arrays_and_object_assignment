@@ -5,10 +5,20 @@
  let cat = {
    genus: 'Felis',
    species: 'Catus'
+
 }
 ```
+console.log(cat.species);
+
 2. Add a color quality to the cat from the previous question.
+
+colour: 'Black'
+
 3. How do you check if our cat object has the propery texture?
+
+console.log(cat.texture)
+//if anything is consoled then there is texture
+
 4. Loop through the following object and log all of directors.
 ``` js
 let films = [
@@ -27,7 +37,15 @@ let films = [
  }
 ]
 
+let directors = []
+for(i=0; i < films.length; i++) {
+  directors.push(films[i].director)
+}console.log(directors)
+
 ```
+
+
+
 5. What will this code log?
 ```js
 let p1 = {
@@ -41,7 +59,7 @@ let p2 = {
 console.log(p1 === p2)
 
 ```
-
+flase
 
 #### Recipe
 
@@ -54,15 +72,53 @@ servings: 2
 ingredients: cinnamon, cumin, cocoa
 ```
 
+
+let bbb = {
+  name: 'Banana Bread',
+  servings: 'People',
+  ingredients: ["Banana" , "Bread", "More things"]
+}
+
+for (let key in bbb) {
+  console.log(key + ": " + bbb[key]);
+}
+
 #### getProps
 Write a code block that takes an object variable and logs all the keys as an array.
 
+let dinosaur = {
+  name: 'Tom',
+  type: 'Big',
+  colour: 'Green'
+}
+
+let arr = (Object.keys(dinosaur));
+console.log(arr)
 
 #### getValues
 Write a code block that takes an object variable and logs all the values as an array.
 
+let dinosaur = {
+  name: 'Tom',
+  type: 'Big',
+  colour: 'Green'
+}
+
+let arr = (Object.values(dinosaur));
+console.log(arr)
+
 #### getObjLength
 Write a code block the logs the number of properties an object has.
+
+let dinosaur = {
+  name: 'Tom',
+  type: 'Big',
+  colour: 'Green'
+}
+
+console.log(Object.keys(dinosaur).length)
+
+//because console.log(dinosuar.length) would only give us an array of 1 we need to specify either the Object.keys or Object.values for the number of properties in the array of the Object
 
 #### WatchList
 Create an array of films, where each film has the following properties: title, director, and a boolean indicating if you started watching it.
@@ -73,5 +129,52 @@ and if not, log
 
 `You still need to watch "Wonder Woman" by director Patty Jenkins. `
 
+let films = [
+  {
+    title: "Wonder Woman",
+    director: "Patty Jenkins",
+    viewed: true
+  },
+  {
+    title: "The Land Before Time",
+    director: "Don Bluth",
+    viewed: true
+  },
+  {
+    title: "Harry Potter",
+    director: "Mike Newell",
+    viewed: false
+  }
+];
+ for (let i = 0; i < films.length; i++) {
+  if (films[i].viewed === true) {
+    console.log(
+      "You already watched " +
+        films[i].title +
+        " directed by " +
+        films[i].director
+    );
+  } else {
+    console.log(
+      "You still need to watch " +
+        films[i].title +
+        " directed by " +
+        films[i].director
+    );
+  }
+}
+
 #### characterCount
 Write a block of code that takes a string varaible and counts the occurance of each character in the string. Use an object to keep track of the counts.
+
+let string = 'war who what is it good for';
+string = string.split('');
+var stringCount ={
+  w : 0,
+}
+for(i=0;i<string.length;i++){
+  if(string[i]==="w"){
+    stringCount.w +=1
+  }
+}
+console.log(stringCount)
