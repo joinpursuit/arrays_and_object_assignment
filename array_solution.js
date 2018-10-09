@@ -97,15 +97,34 @@ for (let i =0; i < originArr.length; i++) {
 console.log(doubleTrouble);
 
 //Question 15
+
+//Solution with two for loops
 let arr = [1,3,4,5,8];
 let target = 9;
-for (let i = 0; i < arr.length; i++) {
-  for (let j = i; j < arr.length ; j++) {
-    while (arr[i] + arr[j] === target) {
-      console.log([i,j]);
-      break;
+let answer = [];
+for (let i = 0; i < arr.length - 1; i++) {
+  for (let j = i + 1; j < arr.length ; j++) {
+    if (arr[i] + arr[j] === target) {
+      answer.push([i,j]);
     }
   }
 }
+console.log(answer);
 
+Solution with objects
+// let arr = [0, 1, 2, 3]
+// let target = 3;
+// let searching = {};
+// let output = [];
+//
+// for(let i = 0; i < arr.length; i++) {
+//  if(searching[arr[i]] || searching[arr[i]] === 0) {
+//    let arrToPush = [Math.min(arr[i], searching[arr[i]]), Math.max(arr[i], searching[arr[i]])]
+//    output.push(arrToPush)
+//  } else {
+//    let look = target - arr[i]
+//    searching[look] = arr[i]
+//  }
+// }
+// console.log(output)
 */
