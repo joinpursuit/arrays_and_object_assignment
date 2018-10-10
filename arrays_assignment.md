@@ -147,6 +147,17 @@ return myArray;
 }
 console.log(rangeWithStep(4,10))
 ```
+Corey's solution (step = 1 creates a DEFAULT VALUE for step, in case the step is not given.):
+```js
+const makeArr = (min, max, step = 1) => {
+  let output = [];
+  for (let i = min; i<= max; i += step ) {
+    output.push(i);
+  }
+  return output;
+}
+console.log(makeArr(4,7))
+```
 14. Write a `doubleTrouble` code block that takes in a variable array of numbers.
 The block should log a new array that doubles every number from the original array.
 ```js
@@ -176,4 +187,19 @@ for (i=0; i<t; i++) {
 return arrayIndices;
 }
 console.log(indices(3,[2,6,9,7,2,9]))
+```
+Right solution (Reed's):
+```js
+let arr = [0,1,2,3];
+let target = 3; //  represents the target
+
+let answer = [];
+
+for (let i = 0; i<arr.length-1; i++) {
+  for (let j = i + 1; j<arr.length; j++) {
+    if (arr[i]+arr[j] === target) {
+      answer.push([i,j]);
+    }
+  }
+}
 ```
