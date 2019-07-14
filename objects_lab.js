@@ -183,7 +183,7 @@ for (let key in deposits) {
   for (let i = 1; i < deposits[key].length; i++) {
     depositsSum += deposits[key][i];
   }
-  console.log(depositsSum); // DEBUG
+  // console.log(depositsSum); // DEBUG
   if (depositsSum > totalsDepositedRanked[0] || totalsDepositedRanked[0] === undefined) {
     totalsDepositedRanked.unshift(depositsSum);
     whoDeposited.unshift(key);
@@ -201,53 +201,117 @@ console.log(`${whoDeposited[0]} received the most money in the total of \$${tota
 
 console.log('b) Create an array called `stolenCents`, iterate over deposits for each person and steal their cents! ... like Office Space or Superman 3. Calculate the decimal part of each value, add it to the `stolenCents` array and round down the value in the original object.');
 //
-/*
 let stolenCents = [];
+let totalsPartDepositedRanked = [];
+let whoPartDeposited = [];
+let stolenCentsSum = 0;
 for (let key in deposits) {
   let partDepositsSum = 0;
   let partStolen = 0;
   for (let i = 0; i < deposits[key].length; i++) {
-    // partDepositsSum += Math.floor(deposits[key]);
-    // partStolen += deposits[key] - Math.floor(deposits[key]);
-    console.log(deposits[key]);
+    partDepositsSum += Math.floor(deposits[key][i]);
+    partStolen += deposits[key][i] - Math.floor(deposits[key][i]);
   }
-  console.log(partDepositsSum);
+  stolenCentsSum += partStolen;
+  if (partDepositsSum > totalsPartDepositedRanked[0] || totalsPartDepositedRanked[0] === undefined) {
+    totalsPartDepositedRanked.unshift(partDepositsSum);
+    whoPartDeposited.unshift(key);
+    stolenCents.unshift(partStolen.toFixed(2));
+  } else if (partDepositsSum > totalsPartDepositedRanked[1] && totalsPartDepositedRanked[1]) {
+    totalsPartDepositedRanked.unshift(totalsPartDepositedRanked[0]);
+    whoPartDeposited.unshift(whoPartDeposited[0]);
+    stolenCents.unshift(stolenCents[0]);
+    totalsPartDepositedRanked[1] = partDepositsSum;
+    whoPartDeposited[1] = key;
+    stolenCents[1] = partStolen.toFixed(2);
+  }
+  // console.log(deposits[key]); // DEBUG
+  // console.log(partDepositsSum); // DEBUG
+  // console.log(partStolen); // DEBUG
 }
+console.log(`After cents being stolen,`);
+console.log(whoPartDeposited);
+console.log(`deposited, repsectively:`);
+console.log(totalsPartDepositedRanked);
+console.log(`From them the amounts stolen, again respectively:`);
+console.log(stolenCents);
+console.log("");
+//
 
-
-*/
 console.log('c) How much money did you steal?');
+//
+console.log(stolenCentsSum.toFixed(2));
+//
+console.log("\n\n");
 
 
 
-/*
-## Question 9
+console.log("9. Create an object to hold information on your favorite recipe. Create a loop that logs the recipe information.");
+//
+let myRecipe = {
+  name: "French toast",
+  servings: 3,
+  ingredients: [
+    "6 slices of bread",
+    "3 eggs",
+    "3/4 cup of milk",
+    "cinnamon powder"
+  ]
+}
+// console.log(myRecipe); // DEBUG
+for (let key in myRecipe) {
+  if (Array.isArray(myRecipe[key])) {
+    console.log(`${key}: ${myRecipe[key].join(", ")}`);
+  } else {
+    console.log(`${key}: ${myRecipe[key]}`);
+  }
+}
+//
+console.log("\n\n");
 
-* Create an object to hold information on your favorite recipe. It should have the following properties: `name`, `servings`, and `ingredients` (an array).
-* Create a loop that logs the recipe information, so it looks like:
-
-```javascript
-name: Mole
-servings: 2
-ingredients: cinnamon, cumin, cocoa
-```
 
 
-## Question 10
-* Create an array of films, where each film has the following properties: title, director, and a boolean indicating if you started watching it.
-* Create a code block that iterates over the array and logs whether the film was watched or not. Examples:
+console.log("10. Create an array of films, where each film has the following properties: title, director, and a boolean indicating if you started watching it.");
+console.log("Create a code block that iterates over the array and logs whether the film was watched or not.");
+//
+let myFilms = [
+  {
+    title: "Spider-Man: Into the Spider-Verse",
+    director: "Bob Persichetti",
+    watched: true
+  },
+  {
+    title: "Sword Art Online: The Movie - Ordinal Scale",
+    director: "Tomohiko Itô",
+    watched: true
+  },
+  {
+    title: "The Shawshank Redemption",
+    director: "Frank Darabont",
+    watched: false
+  },
+  {
+    title: "Léon: The Professional",
+    director: "Luc Besson",
+    watched: true
+  }
+]
 
-`You already watched "Wonder Woman" directed by Patty Jenkins`
-`You still need to watch "Wonder Woman" by director Patty Jenkins. `
+for (i of myFilms) {
+  let youWatch = "You still need to watch ";
+  i.watched
+    ? youWatch = "You already watched "
+    : false;
+  console.log(`${youWatch}"${i.title}" directed by ${i.director}.`);
+}
+//
+console.log("\n\n");
 
 
-## Question 11
 
-Given the following exert from the Declaration of Independence, find the most frequent word that is longer than 5 characters.
-
-```js
-const declarationOfIndependence = `
-When in the Course of human events, it becomes necessary for one people to dissolve the
+console.log("11. Given the following exert from the Declaration of Independence, find the most frequent word that is longer than 5 characters.");
+//
+const dOI = `When in the Course of human events, it becomes necessary for one people to dissolve the
 political bands which have connected them with another, and to assume among the powers of the
 earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle
 them, a decent respect to the opinions of mankind requires that they should declare the causes
@@ -272,5 +336,39 @@ Britain is a history of repeated injuries and usurpations, all having in direct 
 establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a
 candid world.
 `
-```
-*/
+//
+let plus5CharWords = [];
+let dOIWords = [];
+let dOILines = dOI.split('\n');
+for (let i of dOILines) {
+  let moreWords = i.split(' ');
+  dOIWords = dOIWords.concat(moreWords);
+}
+for (let i of dOIWords) {
+  i = i.replace(/[.,;-]/g,""); // Removes non-word punctuation .,;
+  i = i.replace(/'/g,"");
+  i = i.toLowerCase();
+  let obj = {};
+  if (i[5] !== undefined) {
+    if (plus5CharWords[i] !== undefined) {
+      plus5CharWords[i] += 1;
+    } else {
+      plus5CharWords[i] = 1;
+    }
+  }
+}
+let winningWord = "";
+let winningFreq = 0;
+for (let key in plus5CharWords) {
+  if (plus5CharWords[key] > winningFreq) {
+    winningWord = key;
+    winningFreq = plus5CharWords[key];
+  }
+}
+console.log(`Among words longer than five characters, the word "${winningWord}" shows up the most, ${winningFreq} times, in the excerpt.`);
+// console.log(winningFreq); // DEBUG
+
+// console.log(dOIWords); // DEBUG
+// console.log(plus5CharWords); // DEBUG
+//
+console.log("\n\n");
