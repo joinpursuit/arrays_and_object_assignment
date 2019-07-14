@@ -3,16 +3,24 @@
 // Given the cat object below:
 //
 // ```js
-//  let cat = {
-//    genus: 'Felis',
-//    species: 'Catus'
-// }
+ let cat = {
+   genus: 'Felis',
+   species: 'Catus'
+}
 // ```
 //
 // a. Log the species of `cat`.
+console.log(cat.species);
 // b. Add a new key 'color' and give it a value.
+cat.color = "brown";
+console.log(cat);
 // c. Write code that logs whether or not `cat` has the property 'texture'.
-//
+if (cat.texture === undefined) {
+  console.log("Cat doesn't have a texture property. Maybe it should!")
+} else {
+  console.log("Cat has a texture property!")
+}
+console.log("___");
 // ## Question 2
 //
 // What will the code below log?  Explain why.
@@ -26,50 +34,68 @@
 //   name: 'Joe'
 // }
 //
-// console.log(p1 === p2)
-// ```
+// console.log(p1 === p2);
 //
+// let p3 = p1;
+// console.log(p3 === p1);
+// ```
+console.log("This will log 'false' as though both p1 and p2 appear to hold the same properties, in Javascript they are not considered equivalent. They may look similar, but neither points to the other in the way that assigning a new variable to one of them would. ")
+console.log("___");
 // ## Question 3
 //
 // Given the object variable `spanishNumbers` below:
 //
 // ```js
-// let spanishNumbers = {1: "uno", 2: "dos", 3: "tres", 4: "quatro", :5: "cinco"}
+let spanishNumbers = {1: "uno", 2: "dos", 3: "tres", 4: "quatro", 5: "cinco"}
 // ```
 //
 // a. Write a code block that takes an object variable and stores the *keys* in an array.  Then log the array.
+let spanishKeys = Object.keys(spanishNumbers);
+console.log(spanishKeys);
 // b. Write a code block that takes an object variable and stores the *values* in an array.  Then log the array.
-//
-//
+let spanishValues = Object.values(spanishNumbers);
+console.log(spanishValues);
+console.log("___");
 // ## Question 4
 //
 // Write a code block the logs the number of properties an object has.
-//
+let lunch = {sandwich: "peanut butter", drink: "iced tea", snack: "cookie"}
+let numberLunch = (Object.keys(lunch).length);
+console.log(numberLunch);
+console.log("___");
 // ## Question 5
 //
 // Loop through the following object and log all of the directors.
 //
 // ``` js
-// let films = [
-//  {
-//    name: 'Psycho',
-//    director: 'Alfred Hitchcock',
-//    released: 1960
-//  }, {
-//    name: 'Citizen Kane',
-//    director: 'Orson Welles',
-//    released: 1941
-//  }, {
-//    name: 'The Usual Suspects',
-//    director: 'Bryan Singer',
-//    released: 1995
-//  }
-// ]
+let films = [
+ {
+   name: 'Psycho',
+   director: 'Alfred Hitchcock',
+   released: 1960
+ }, {
+   name: 'Citizen Kane',
+   director: 'Orson Welles',
+   released: 1941
+ }, {
+   name: 'The Usual Suspects',
+   director: 'Bryan Singer',
+   released: 1995
+ }
+]
 //
 // //logs 'Alfred Hitchcock', 'Orson Welles', 'Bryan Singer'
 // ```
-//
-//
+for (let filmObjects = 0; filmObjects < films.length; filmObjects ++) {
+  let directors = films[filmObjects];
+  console.log(directors[1]);
+  // for (let findDirectors = 0; findDirectors < directors.length; findDirectors ++) {
+  //   let resultFilms = directors[1];
+  // console.log(resultFilms);
+// }
+}
+
+console.log("___");
 // ## Question 6
 //
 // You are given an array of objects. Each object in the array contains exactly 2 keys `“firstName”` and `“lastName”`
