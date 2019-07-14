@@ -229,7 +229,7 @@ let myString = "We're flooding people with information. We need to feed it throu
 let brokenString = myString.toLowerCase();
 
 
-let alpha = {a: 0, b: 0, c: 0, d: 0, e: 0, f: 0, g: 0, h: 0, i: 0, j: 0, k: 0, l: 0, m: 0, n: 0, p: 0, q: 0, r: 0, s: 0, t: 0, u: 0, v: 0, w: 0, x: 0, y: 0, z: 0};
+let alpha = {a: 0, b: 0, c: 0, d: 0, e: 0, f: 0, g: 0, h: 0, i: 0, j: 0, k: 0, l: 0, m: 0, n: 0, o: 0, p: 0, q: 0, r: 0, s: 0, t: 0, u: 0, v: 0, w: 0, x: 0, y: 0, z: 0};
 
 for (let letter in alpha) {
   for (let letter2 of brokenString){
@@ -290,12 +290,31 @@ let deposits = {
  "Clark" : [555.23, 45.67, 99.95, 80.76, 56.99, 46.50, 265.70],
  "Johnson" : [12.56, 300.00, 640.50, 255.60, 26.88]
 };
-
+let name = Object.keys(deposits);
 let money = Object.values(deposits);
+let max = 0;
+let addArr = [];
+let bigName;
+
 
 for (let people of money) {
+  let sum = 0;
   for (let i = 0; i < people.length; i++) {
     sum += people[i];
+    }
+    addArr.push(sum);
   }
-  console.log(sum);
+// console.log(addArr);
+for (let x of addArr) {
+  if (x > max) {
+    max = x;
+  }
+  bigName = name[addArr.indexOf(max)];
 }
+
+// console.log(max);
+
+console.log(`${bigName} made the biggest deposit, putting $ ${max} in the bank.`)
+
+
+console.log("8.b._____________________________________");
