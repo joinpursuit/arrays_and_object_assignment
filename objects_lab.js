@@ -125,29 +125,105 @@ let people = [
 // a. Create an array of strings called `firstNames` that contains only the values for `“firstName”` from each object.
 let firstNames =[]
 for (i =0; i < people.length; i++){
-  let nameFirst = people[i].firstName;
-  console.log(nameFirst);
-}
+  firstNames.push(people[i].firstName);
+
+}console.log(firstNames);
 console.log('----------')
 // b. Create an array of strings called `fullNames` that contains the values for `“firstName”` and `“lastName”` from the object separated by a space.
 let fullNames =[];
 for (i =0; i < people.length; i++){
-  let nameFull = people[i].firstName +' '+ people[i].lastName;
-  console.log(nameFull);
-}
-// ## Question 7
-//
+  fullNames.push(people[i].firstName +' '+ people[i].lastName);
+
+}console.log(fullNames);
+
+// Question 7
 // Print the second most common letter in the string below:
-//
-let count
+let obj2 ={}
+//iterating over the string. To get individual character
+//check  current character to see if it is a key in obj2
+// -> if it is not then
+//      ->create the key
+//     -> and set the value to one. Meaning we have seen the currChar
  var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
-let str = myString.split(' ');
-let arr
-//arr = arr.push(str)
+// set for loop to loop through the string to check and push character into object
+myString =myString.toLowerCase();
+for (let i = 0; i< myString.length; i++){
+  let currChar = myString[i];
+  //console.log(currChar);
+  if (currChar !== ' ' && currChar !=='.' && currChar !== "'"){
+    if (obj2[currChar] === undefined){
+        obj2[currChar] = 1
+  } else {
+    obj2[currChar]++
+  }
+}
+} console.log(obj2);
+/*
+code to find the second most common letter in the object and finds the second most common
+let mostCommon;
+let mostCommonCount = 0;
+for (let letter in obj2){
+    if (obj2[letter] > mostCommonCount){
+      mostCommonCount = obj2[letter];
+      mostCommon = letter;
+    }
+*/
 
+//full code to find the second most commmon character
+let mostCommon;
+let mostCommonCount = 0;
 
+let secondMost;
+let secondMostCount =0;
+for (let letter in obj2){
+    if (obj2[letter] > mostCommonCount){
+      mostCommonCount = obj2[letter];
+      mostCommon = letter;
 
-// ## Question 8
+    } else if(obj2[letter] > secondMostCount){
+      secondMostCount = obj2[letter]
+      secondMost = letter
+    }
+}
+console.log(`The most common character is: ${mostCommon} with a count of ${mostCommonCount}`);
+console.log(`The second most common character is ${secondMost} withg a count of ${secondMostCount} `);
+console.log('==========');
+/*
+alternate still working on
+let mostComm;
+let mostCommCount = 0;
+
+let secMostComm;
+let secMostCommCount = 0;
+for (let char in obj) {
+  if (obj[char] > mostCommCount) {
+    secMostCommCount = mostCommCount
+    secMostComm = mostComm
+
+    mostComm = char
+    mostCommCount = obj[char]
+  } else if (obj[char] > secMostCommCount) {
+    //secMostCommCount < mostCommCount) {
+    console.log(`${mostComm}: ${mostCommCount} | ${secMostComm}: ${secMostCommCount} `)
+
+    secMostCommCount = obj[char];
+    secMostComm = char
+
+    console.log(`=> ${mostComm}: ${mostCommCount} | ${secMostComm}: ${secMostCommCount} `)
+  }
+}
+*/
+
+// let str = myString.split('');
+// let arr= [];
+// arr.push(str)
+// console.log(arr)
+// function findDupes (str){
+//   let arr =[];
+
+//   str.forEach(function(elem))
+// }
+// Question 8
 let deposits = {
  "Williams" : [300.65, 270.45, 24.70, 52.00, 99.99,],
  "Cooper" : [200.56, 55.00, 600.78, 305.15, 410.76, 35.00],
@@ -244,30 +320,62 @@ for (let i=0; i< cinema.length; i++){
 // Given the following exert from the Declaration of Independence, find the most frequent word that is longer than 5 characters.
 //
 // ```js
-  // const declarationOfIndependence = `
-  // When in the Course of human events, it becomes necessary for one people to dissolve the
-  // political bands which have connected them with another, and to assume among the powers of the
-  // earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle
-  // them, a decent respect to the opinions of mankind requires that they should declare the causes
-  // which impel them to the separation.
-  //
-  // We hold these truths to be self-evident, that all men are created equal, that they are endowed by
-  // their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit
-  // of Happiness. That to secure these rights, Governments are instituted among Men, deriving
-  // their just powers from the consent of the governed, That whenever any Form of Government
-  // becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to
-  // institute new Government, laying its foundation on such principles and organizing its powers in
-  // such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence,
-  // indeed, will dictate that Governments long established should not be changed for light and
-  // transient causes; and accordingly all experience hath shewn, that mankind are more disposed to
-  // suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they
-  // are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same
-  // Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty,
-  // to throw off such Government, and to provide new Guards for their future security. Such has
-  // been the patient sufferance of these Colonies; and such is now the necessity which constrains
-  // them to alter their former Systems of Government. The history of the present King of Great
-  // Britain is a history of repeated injuries and usurpations, all having in direct object the
-  // establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a
-  // candid world.
-  // `;
+  const declarationOfIndependence = `
+  When in the Course of human events, it becomes necessary for one people to dissolve the
+  political bands which have connected them with another, and to assume among the powers of the
+  earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle
+  them, a decent respect to the opinions of mankind requires that they should declare the causes
+  which impel them to the separation.
+
+  We hold these truths to be self-evident, that all men are created equal, that they are endowed by
+  their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit
+  of Happiness. That to secure these rights, Governments are instituted among Men, deriving
+  their just powers from the consent of the governed, That whenever any Form of Government
+  becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to
+  institute new Government, laying its foundation on such principles and organizing its powers in
+  such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence,
+  indeed, will dictate that Governments long established should not be changed for light and
+  transient causes; and accordingly all experience hath shewn, that mankind are more disposed to
+  suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they
+  are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same
+  Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty,
+  to throw off such Government, and to provide new Guards for their future security. Such has
+  been the patient sufferance of these Colonies; and such is now the necessity which constrains
+  them to alter their former Systems of Government. The history of the present King of Great
+  Britain is a history of repeated injuries and usurpations, all having in direct object the
+  establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a
+  candid world.
+  `;
 // ```
+let indSplit = declarationOfIndependence.split(' ')
+let words = []
+let decObj= {};
+words.push(indSplit);
+//console.log(words)
+for (let i = 0; i< words.length; i++){
+  let currWord = words[i];
+  //console.log(currChar);
+  if (currWord !== ' ' && currWord !=='.' && currWord !== "'"){
+    if (decObj[currWord] === undefined){
+        decObj[currWord] = 1
+  } else {
+    decObj[currWord]++
+  }
+}
+} console.log(decObj);
+
+
+
+
+// h
+// for (let i =0; i <words.length; i++){
+//         let currWord = words[i]
+//       //console.log(words)
+//     if (currChar !== ' ' && currChar !=='.' && currChar !== "'"){
+//         if (decObj[currWord] === undefined){
+//             decObj[currWord = 1
+//             } else {
+//         decObj[currWord]++
+//          }
+//    }
+// }console.log(decObj);
