@@ -145,8 +145,8 @@ for(let key of people) {
 }
 
 for (let i = 0; i < firstName.length; i++) {
-    fullName.push(firstName[i]);
-    fullName.push(lastName[i]);
+    fullName.push(firstName[i] + " " + lastName[i]);
+    // fullName.push(lastName[i]);
 }
 
 console.log("6a) ", firstName);
@@ -342,7 +342,6 @@ for (let word of wordArr) {
     }
 }
 
-console.log(decObj)
 let maxWord = 0;
 let maxWordLtr = '';
 
@@ -356,7 +355,6 @@ for (let word in decObj) {
     } else if (decObj[word] === maxWord && decObj[word] > 5){
         maxWordLtr += " & " + word;
     }
-    console.log(decObj[word])
 }
 
 console.log("11) ", maxWordLtr);
