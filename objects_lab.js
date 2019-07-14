@@ -293,8 +293,9 @@ let deposits = {
 
 let money = Object.values(deposits);
 
-for (let i = 0; i < money.length; i ++) {
-  sum += money[i];
+for (let people of money) {
+  for (let i = 0; i < people.length; i++) {
+    sum += people[i];
+  }
+  console.log(sum);
 }
-
-console.log(sum);
