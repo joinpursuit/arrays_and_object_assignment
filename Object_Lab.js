@@ -194,3 +194,164 @@ console.log("First names : ", firstNames);
 console.log("Full names : ", fullNames);
 
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n');
+
+
+/* Question 7
+Print the second most common letter in the string below:
+
+var myString = "We're flooding people with information.
+                We need to feed it through a processor.
+                A human must turn information into intelligence or knowledge.
+                We've tended to forget that no computer
+                will ever ask a new question."
+*/
+
+var myString = `We're flooding people with information.
+                We need to feed it through a processor.
+                A human must turn information into intelligence or knowledge.
+                We've tended to forget that no computer
+                will ever ask a new question.`;
+
+let lowerMyString = myString.toLowerCase();
+
+let alph = {
+   a: 0,
+   b: 0,
+   c: 0,
+   d: 0,
+   e: 0,
+   f: 0,
+   g: 0,
+   h: 0,
+   i: 0,
+   j: 0,
+   k: 0,
+   l: 0,
+   m: 0,
+   n: 0,
+   p: 0,
+   q: 0,
+   r: 0,
+   s: 0,
+   t: 0,
+   u: 0,
+   v: 0,
+   w: 0,
+   x: 0,
+   y: 0,
+   z: 0
+ };
+
+//console.log(lowerMyString.length)
+for (let i = 0; i < lowerMyString.length; i++){
+  for (let letter in alph){
+    if (lowerMyString[i] === letter){
+      alph[letter] ++;
+    }
+  }
+}
+//console.log(alph);
+
+let alphKeys = Object.keys(alph);
+let alphValues = Object.values(alph);
+
+console.log(alphValues);
+let max = alphValues[0];
+let secondMax = -Infinity;
+
+for (let repet of alphValues){
+  if (repet > max){
+    max = repet;
+  } else if (repet > secondMax){
+    secondMax = repet;
+  }
+}
+//console.log(max, secondMax)
+let index = alphValues.indexOf(secondMax);
+//console.log(index);
+let secondMaxChar = alphKeys[index];
+
+console.log(`The second most commun letter in the text is : ${secondMaxChar}`);
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n');
+
+
+/* Question 8
+You are given the object deposits, which maps a persons name to an array of deposits
+that have been made to their account.
+
+a) Write code to to print the name and total amount deposited of the person
+who received the most money.
+
+b) Create an array called stolenCents, iterate over deposits for each
+person and steal their cents! ... like Office Space or Superman3.
+Calculate the decimal part of each value, add it to the stolenCents array
+and round down the value in the original object.
+
+c) How much money did you steal?
+
+let deposits = {
+ "Williams" : [300.65, 270.45, 24.70, 52.00, 99.99],
+ "Cooper" : [200.56, 55.00, 600.78, 305.15, 410.76, 35.00],
+ "Davies" : [400.98, 56.98, 300.00],
+ "Clark" : [555.23, 45.67, 99.95, 80.76, 56.99, 46.50, 265.70],
+ "Johnson" : [12.56, 300.00, 640.50, 255.60, 26.88]
+}
+*/
+
+let deposits = {
+ "Williams" : [300.65, 270.45, 24.70, 52.00, 99.99],
+ "Cooper" : [200.56, 55.00, 600.78, 305.15, 410.76, 35.00],
+ "Davies" : [400.98, 56.98, 300.00],
+ "Clark" : [555.23, 45.67, 99.95, 80.76, 56.99, 46.50, 265.70],
+ "Johnson" : [12.56, 300.00, 640.50, 255.60, 26.88]
+}
+console.log(`Name and total amount deposited of the person who received the most money`)
+
+let money = Object.values(deposits);
+let names = Object.keys(deposits);
+let maxAmount = 0;
+let arrOfTotals =[];
+
+//console.log(money)
+for (let arr of money){
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++){
+    sum += arr[i];
+  }
+  arrOfTotals.push(sum);
+}
+console.log(arrOfTotals);
+
+
+for (let total of arrOfTotals){
+  if (total > maxAmount){
+    maxAmount = total;
+  }
+}
+
+let indexOfMaxTotal = arrOfTotals.indexOf(maxAmount);
+let nameOfMaxTotal = names[indexOfMaxTotal];
+console.log(`${nameOfMaxTotal} deposited the largest amount of ${maxAmount}`);
+
+
+console.log('Stealing the cents ');
+let stolenCents = [];
+let sumAllCents = 0;
+
+for (let arr of money){
+  let innerArrRounded = [];
+  let innerArrCents = [];
+  let sumIndividualCents = 0;
+
+  for (let i = 0; i < arr.length; i++){
+    let round = Math.floor(arr[i]);
+    let cents = arr[i] - round;
+    innerArrRounded.push(round);
+    innerArrCents.push(cents);
+    sumIndividualCents += cents;
+  }
+  stolenCents.push(innerArrCents);
+  sumAllCents += sumIndividualCents;
+}
+console.log(stolenCents);
+console.log(sumAllCents);
