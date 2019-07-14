@@ -146,7 +146,6 @@ for(let key of people) {
 
 for (let i = 0; i < firstName.length; i++) {
     fullName.push(firstName[i] + " " + lastName[i]);
-    // fullName.push(lastName[i]);
 }
 
 console.log("6a) ", firstName);
