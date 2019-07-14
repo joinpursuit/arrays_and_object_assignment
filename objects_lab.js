@@ -214,19 +214,26 @@ function ithLargestNumb(ar, i = 1) {
 
 function ithMostCommonLetter(str, x = 1) {
   let strObj = {};
+  // for (let i = 0; i < str.length; i++) {
+  //   if (str[i] === ` ` || str[i] === `.` || str[i] === `'`) {
+  //     continue;
+  //   }
+  //   var letter = new RegExp(str[i], 'ig');
+  //   strObj[str[i]] = str.match(letter).length;
+  // }
   for (let i = 0; i < str.length; i++) {
-    if (str[i] === ` ` || str[i] === `.` || str[i] === `'`) {
-      continue;
-    }
-    var letter = new RegExp(str[i], 'ig');
-    strObj[str[i]] = myString.match(letter).length;
+    str[i] !== ` ` && str[i] !== `'` && str[i] !== `.` ?
+      strObj[str[i].toUpperCase()] === undefined ?
+        strObj[str[i].toUpperCase()] = 1 : strObj[str[i].toUpperCase()] += 1 :
+      null;
   }
+
 
   return objKeys(strObj)[objValues(strObj).indexOf(ithLargestNumb(objValues(strObj), x))];
 }
 
-console.log(ithMostCommonLetter(myString));
-console.log(ithMostCommonLetter(myString, 2));
+console.log(ithMostCommonLetter(myString)); // most common
+console.log(ithMostCommonLetter(myString, 2)); // 2nd most common
 
 // console.log(ithMostCommonLetter(myString));
 // function mostCommonLetter(str) {
@@ -292,7 +299,22 @@ function ithMostMoney(ar, i = 1){
   for (let i of objValues(ar)) sA.push(sumArray(i));
   return objKeys(ar)[sA.indexOf(ithLargestNumb(sA, i))] + ` $` + ithLargestNumb(sA, i);
 }
+
 console.log(ithMostMoney(deposits));
+
+function spareChange(ar) {
+  let spareChange = [];
+  for (let i of objValues(ar)) i % 1 !== 0 ? spareChange.push(Math.floor(100 * (i % 1)) / 100): null;
+  return spareChange;
+}
+
+function stolenCents(obj) {
+  let spareChangeObj = [];
+  for (let i of objValues(obj)) spareChangeObj = spareChangeObj.concat(spareChange(i));
+  return spareChangeObj;
+}
+
+console.log(stolenCents(deposits));
 
 //9
 console.log('\n\n\n\n======================\n ## Question 9\n');
