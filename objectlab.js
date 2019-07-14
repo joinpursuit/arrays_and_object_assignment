@@ -170,10 +170,10 @@ for (let ltr of splitMe) {
     }
 }
 
-let max = 0
+let max = 0;
 let secondMax = 0;
-maxLtr = '';
-sndMaxLtr = '';
+let maxLtr = '';
+let sndMaxLtr = '';
 for (let letter of splitMe) {
     if (letter === " " || letter === "'" || letter === "."){
         continue;
@@ -332,7 +332,7 @@ candid world.
 // ```
 
 let decObj = {};
-let wordArr = declarationOfIndependence.replace(/[\n\t\r\,\;\.\-]/g," ").replace(/[\']/g,"").toLowerCase().split(" ");
+let wordArr = declarationOfIndependence.replace(/[\n\t\r\,\;\.\-]/g," ").replace(/[\'\//]/g,"").toLowerCase().split(" ");
 
 for (let word of wordArr) {
     if (decObj.hasOwnProperty(word)) {
@@ -342,18 +342,21 @@ for (let word of wordArr) {
     }
 }
 
+console.log(decObj)
 let maxWord = 0;
 let maxWordLtr = '';
+
 for (let word in decObj) {
     if (word === '') {
         decObj[word] = 0;
     }
-    if (decObj[word] > maxWord && decObj[word] > 5) {
+    if (decObj[word] > maxWord && word.length > 5) {
         maxWord = decObj[word];
         maxWordLtr = word;
     } else if (decObj[word] === maxWord && decObj[word] > 5){
         maxWordLtr += " & " + word;
     }
+    console.log(decObj[word])
 }
 
 console.log("11) ", maxWordLtr);
