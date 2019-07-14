@@ -101,7 +101,9 @@ let films = [
    released: 1995
  }
 ]
+//if (i = 0; i < films.length; i++) {
 
+//}
 //
 // //logs 'Alfred Hitchcock', 'Orson Welles', 'Bryan Singer'
 // ```
@@ -110,7 +112,6 @@ console.log('----- Question 5 -----');
 for (i = 0; i < films.length; i++) {
   console.log(films[i].director);
 }
-
 // ## Question 6
 //
 // You are given an array of objects. Each object in the array contains exactly 2 keys `“firstName”` and `“lastName”`
@@ -151,12 +152,6 @@ for (i = 0; i < people.length; i++) {
 }
 console.log(firstNames);
 console.log(fullNames);
-// for (let key in people) {
-// firstNames.push(people.firstName)
-//
-// fullNames.push(firstNames + lastNames);
-// }
-//console.log(firstNames);
 // ## Question 7
 //
 // Print the second most common letter in the string below:
@@ -168,17 +163,16 @@ let counter = {};
 let amount = [];
   for (let i = 0; i < myString.length; i++) {
     char = myString.charAt(i);
-    myString.number = counter[char];
-    if (myString.number) {
-      counter[char] = myStringnumber + 1;
+    number = counter[char];
+    if (number) {
+      counter[char] = number + 1;
     } else {
       counter[char] = 1;
     }
   }
     for(char in counter) {
-    //console.log(char + ' count: ' + counter[char]);
-    //console.log(amount.push(number.counter))
-  } console.log (myString.number);
+    console.log(char + ' count: ' + counter[char]);
+  }
 
 
 // ## Question 8
@@ -192,16 +186,15 @@ let amount = [];
 // c) How much money did you steal?
 //
 // ```js
-let deposits = {
- "Williams" : [300.65, 270.45, 24.70, 52.00, 99.99],
- "Cooper" : [200.56, 55.00, 600.78, 305.15, 410.76, 35.00],
- "Davies" : [400.98, 56.98, 300.00],
- "Clark" : [555.23, 45.67, 99.95, 80.76, 56.99, 46.50, 265.70],
- "Johnson" : [12.56, 300.00, 640.50, 255.60, 26.88]
-}
+// let deposits = {
+//  "Williams" : [300.65, 270.45, 24.70, 52.00, 99.99],
+//  "Cooper" : [200.56, 55.00, 600.78, 305.15, 410.76, 35.00],
+//  "Davies" : [400.98, 56.98, 300.00],
+//  "Clark" : [555.23, 45.67, 99.95, 80.76, 56.99, 46.50, 265.70],
+//  "Johnson" : [12.56, 300.00, 640.50, 255.60, 26.88]
+// }
 // ```
 console.log('----- Question 8 -----');
-let count
 // ## Question 9
 //
 // * Create an object to hold information on your favorite recipe. It should have the following properties: `name`, `servings`, and `ingredients` (an array).
