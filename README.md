@@ -72,11 +72,11 @@ let films = [
 ```
 
 
-## Question 6
+<!-- ## Question 6
 
 You are given an array of objects. Each object in the array contains exactly 2 keys `“firstName”` and `“lastName”`
 
-```js
+```js -->
 let people = [
     {
         "firstName": "Calvin",
@@ -91,7 +91,7 @@ let people = [
         "lastName": "Rivera"
     },
     {
-        "firstName": "Sonja",
+        <!-- "firstName": "Sonja", -->
         "lastName": "Moreno"
     },
     {
@@ -100,15 +100,19 @@ let people = [
     }
 ]
 ```
-a. Create an array of strings called `firstNames` that contains only the values for `“firstName”` from each object.
+<!-- a. Create an array of strings called `firstNames` that contains only the values for `“firstName”` from each object. -->
+let firstNames= [];
+for(let i = 0; i < films.length; i++) {
+  console.log(films[i].name);
+}
 b. Create an array of strings called `fullNames` that contains the values for `“firstName”` and `“lastName”` from the object separated by a space.
-
+** combine somehow the previous questions
 
 ## Question 7
 
 Print the second most common letter in the string below:
 
-var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
+var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question." 
 
 ## Question 8
 
