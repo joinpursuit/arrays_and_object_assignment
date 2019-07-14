@@ -172,7 +172,7 @@ for (let h in container) {
 let second
 count = 0
 for (let i in container) {
-  if (container[i] > count & container[i] < container[common]) {
+  if (container[i] > count && container[i] < container[common]) {
     count = container[i]
     second = i
   }
