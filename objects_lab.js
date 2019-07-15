@@ -1,6 +1,7 @@
 // # Object Exercises
 //1
-console.log('\n\n\n\n======================\n ## Question 1\n');
+console.log('\n\n\n\n===========================================\n ## Question 1\n');
+/*
 console.log(`
 Given the cat object below:
 
@@ -15,6 +16,7 @@ a. Log the species of 'cat'.
 b. Add a new key 'color' and give it a value.
 c. Write code that logs whether or not 'cat' has the property 'texture'.
 \n\n`);
+*/
 
 let cat = {
   genus: 'Felis',
@@ -27,7 +29,8 @@ console.log(cat.color);
 console.log(cat.hasOwnProperty('texture'));
 
 //2
-console.log('\n\n\n\n======================\n ## Question 2\n');
+console.log('\n\n\n\n===========================================\n ## Question 2\n');
+/*
 console.log(`
 What will the code below log?  Explain why.
 
@@ -42,14 +45,16 @@ let p2 = {
 
 console.log(p1 === p2)
 '''
-`);
+\n\n`);
+*/
 
 console.log(`false. Because its 2 different objects. For example 2 people can have the same name
   and birthday but still be two different people. 2 car can be exact model but they are still
   2 different cars.`);
 
 //3
-console.log('\n\n\n\n======================\n ## Question 3\n');
+console.log('\n\n\n\n===========================================\n ## Question 3\n');
+/*
 console.log(`Given the object variable 'spanishNumbers' below:
 
 '''js
@@ -59,6 +64,7 @@ let spanishNumbers = {1: "uno", 2: "dos", 3: "tres", 4: "quatro", :5: "cinco"}
 a. Write a code block that takes an object variable and stores the *keys* in an array.  Then log the array.
 b. Write a code block that takes an object variable and stores the *values* in an array.  Then log the array.
 \n\n`);
+*/
 
 let spanishNumbers = { 1: 'uno', 2: 'dos', 3: 'tres', 4: 'quatro', 5: 'cinco' };
 
@@ -79,13 +85,17 @@ function objValues(obj) {
 console.log(objValues(spanishNumbers));
 
 //4
-console.log('\n\n\n\n======================\n ## Question 4\n');
-console.log(`Write a code block the logs the number of properties an object has.\n\n`);
+console.log('\n\n\n\n===========================================\n ## Question 4\n');
+/*
+console.log(`Write a code block the logs the number of properties an object has.
+\n\n`);
+*/
 
 console.log(Object.keys(spanishNumbers).length);
 
 //5
-console.log('\n\n\n\n======================\n ## Question 5\n');
+console.log('\n\n\n\n===========================================\n ## Question 5\n');
+/*
 console.log(`Loop through the following object and log all of the directors.
 
 ''' js
@@ -106,7 +116,9 @@ let films = [
 ]
 
 //logs 'Alfred Hitchcock', 'Orson Welles', 'Bryan Singer'
-'''\n\n`);
+'''
+\n\n`);
+*/
 
 let films = [
  {
@@ -131,7 +143,8 @@ for (let i in films) {
 console.log(directors);
 
 //6
-console.log('\n\n\n\n======================\n ## Question 6\n');
+console.log('\n\n\n\n===========================================\n ## Question 6\n');
+/*
 console.log(`You are given an array of objects. Each object in the array contains exactly 2 keys '“firstName”' and '“lastName”'
 
 '''js
@@ -161,6 +174,7 @@ let people = [
 a. Create an array of strings called 'firstNames' that contains only the values for '“firstName”' from each object.
 b. Create an array of strings called 'fullNames' that contains the values for '“firstName”' and '“lastName”' from the object separated by a space.
 \n\n`);
+*/
 
 let people = [
     {
@@ -196,8 +210,11 @@ console.log(firstNames);
 console.log(fullNames);
 
 //7
-console.log('\n\n\n\n======================\n ## Question 7\n');
-console.log(`Print the second most common letter in the string below:`);
+console.log('\n\n\n\n===========================================\n ## Question 7\n');
+/*
+console.log(`Print the second most common letter in the string below:
+\n\n`);
+*/
 
 var myString = `We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question.`
 
@@ -214,13 +231,6 @@ function ithLargestNumb(ar, i = 1) {
 
 function ithMostCommonLetter(str, x = 1) {
   let strObj = {};
-  // for (let i = 0; i < str.length; i++) {
-  //   if (str[i] === ` ` || str[i] === `.` || str[i] === `'`) {
-  //     continue;
-  //   }
-  //   var letter = new RegExp(str[i], 'ig');
-  //   strObj[str[i]] = str.match(letter).length;
-  // }
   for (let i = 0; i < str.length; i++) {
     str[i] !== ` ` && str[i] !== `'` && str[i] !== `.` ?
       strObj[str[i].toUpperCase()] === undefined ?
@@ -235,33 +245,9 @@ function ithMostCommonLetter(str, x = 1) {
 console.log(ithMostCommonLetter(myString)); // most common
 console.log(ithMostCommonLetter(myString, 2)); // 2nd most common
 
-// console.log(ithMostCommonLetter(myString));
-// function mostCommonLetter(str) {
-//   let common = str[0];
-//   let counter = 0;
-//   let count = 0;
-//   let letter = str[0];
-//   var re = new RegExp(letter, 'ig');
-//   for (let i = 0; i < str.length; i++) {
-//       if (str[i] === ` ` || str[i] === `.` || str[i] === `'`) {
-//         continue;
-//       } else letter = str[i];
-//       var re = new RegExp(letter, 'ig');
-//       count = str.match(re).length;
-//       if (count > counter) {
-//         counter = count;
-//         common = letter;
-//       }
-//   }
-//
-//
-//   return [counter, common];
-// }
-//
-// console.log(mostCommonLetter(myString));
-
 //8
-console.log('\n\n\n\n======================\n ## Question 8\n');
+console.log('\n\n\n\n===========================================\n ## Question 8\n');
+/*
 console.log(`You are given the object 'deposits', which maps a persons name to an array of deposits that have been made to their account.
 
 a) Write code to to print the name and total amount deposited of the person who received the most money.
@@ -278,7 +264,9 @@ let deposits = {
  "Clark" : [555.23, 45.67, 99.95, 80.76, 56.99, 46.50, 265.70],
  "Johnson" : [12.56, 300.00, 640.50, 255.60, 26.88]
 }
-'''`);
+'''
+\n\n`);
+*/
 
 let deposits = {
  Williams : [300.65, 270.45, 24.70, 52.00, 99.99],
@@ -300,24 +288,34 @@ function ithMostMoney(ar, i = 1){
   return objKeys(ar)[sA.indexOf(ithLargestNumb(sA, i))] + ` $` + ithLargestNumb(sA, i);
 }
 
+//a
 console.log(ithMostMoney(deposits));
-
-function spareChange(ar) {
-  let spareChange = [];
-  for (let i of objValues(ar)) i % 1 !== 0 ? spareChange.push(Math.floor(100 * (i % 1)) / 100): null;
-  return spareChange;
-}
+console.log(ithMostMoney(deposits, 2));
 
 function stolenCents(obj) {
-  let spareChangeObj = [];
-  for (let i of objValues(obj)) spareChangeObj = spareChangeObj.concat(spareChange(i));
-  return spareChangeObj;
+  let stolenCents = [];
+  for (let i in obj) {
+    let keyValue = obj[i];
+    for (let j in keyValue) {
+      stolenCents.push(Math.round(100 * (keyValue[j] % 1)) / 100);
+      keyValue[j] -= (Math.round(100 * (keyValue[j] % 1)) / 100);
+    }
+    obj[i] = keyValue;
+  }
+
+  return stolenCents;
 }
 
+//b
+console.log(deposits);
 console.log(stolenCents(deposits));
 
+//c
+console.log(sumArray(stolenCents(deposits)));
+
 //9
-console.log('\n\n\n\n======================\n ## Question 9\n');
+console.log('\n\n\n\n===========================================\n ## Question 9\n');
+/*
 console.log(`* Create an object to hold information on your favorite recipe. It should have the following properties: 'name', 'servings', and 'ingredients' (an array).
 * Create a loop that logs the recipe information, so it looks like:
 
@@ -326,54 +324,127 @@ name: Mole
 servings: 2
 ingredients: cinnamon, cumin, cocoa
 '''
-`);
+\n\n`);
+*/
 
 let favoriteRecipe = {};
 favoriteRecipe.name = `Mole`;
 favoriteRecipe.servings = 2;
-favoriteRecipe.ingredients = [`cinnamon`, `cumin`, `cocoa`];
-console.log(favoriteRecipe);
+favoriteRecipe.ingredients = [`cinnamon`, ` cumin`, ` cocoa`];
+
+for (let i in favoriteRecipe) console.log(`${i}: ${favoriteRecipe[i]}`);
 
 //10
-console.log('\n\n\n\n======================\n ## Question 10\n');
+console.log('\n\n\n\n===========================================\n ## Question 10\n');
+/*
+console.log(`* Create an array of films, where each film has the following properties: title, director, and a boolean indicating if you started watching it.
+* Create a code block that iterates over the array and logs whether the film was watched or not. Examples:
 
-// * Create an array of films, where each film has the following properties: title, director, and a boolean indicating if you started watching it.
-// * Create a code block that iterates over the array and logs whether the film was watched or not. Examples:
-//
-// 'You already watched "Wonder Woman" directed by Patty Jenkins'
-// 'You still need to watch "Wonder Woman" by director Patty Jenkins. '
-//
-//
-console.log('\n\n\n\n======================\n ## Question 11\n');
+'You already watched "Wonder Woman" directed by Patty Jenkins'
+'You still need to watch "Wonder Woman" by director Patty Jenkins. '
+\n\n`);
+*/
 
-//
-// Given the following exert from the Declaration of Independence, find the most frequent word that is longer than 5 characters.
-//
-// '''js
-// const declarationOfIndependence = '
-// When in the Course of human events, it becomes necessary for one people to dissolve the
-// political bands which have connected them with another, and to assume among the powers of the
-// earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle
-// them, a decent respect to the opinions of mankind requires that they should declare the causes
-// which impel them to the separation.
-//
-// We hold these truths to be self-evident, that all men are created equal, that they are endowed by
-// their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit
-// of Happiness. That to secure these rights, Governments are instituted among Men, deriving
-// their just powers from the consent of the governed, That whenever any Form of Government
-// becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to
-// institute new Government, laying its foundation on such principles and organizing its powers in
-// such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence,
-// indeed, will dictate that Governments long established should not be changed for light and
-// transient causes; and accordingly all experience hath shewn, that mankind are more disposed to
-// suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they
-// are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same
-// Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty,
-// to throw off such Government, and to provide new Guards for their future security. Such has
-// been the patient sufferance of these Colonies; and such is now the necessity which constrains
-// them to alter their former Systems of Government. The history of the present King of Great
-// Britain is a history of repeated injuries and usurpations, all having in direct object the
-// establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a
-// candid world.
-// '
-// '''
+films = [
+  {
+   title: 'Psycho',
+   director: 'Alfred Hitchcock',
+   watched: false,
+  }, {
+   title: 'Citizen Kane',
+   director: 'Orson Welles',
+   watched: false,
+  }, {
+   title: 'The Usual Suspects',
+   director: 'Bryan Singer',
+   watched: true,
+  }
+]
+
+for (let i in films) {
+  //console.log(films[i].watched);
+  films[i].watched ?
+    console.log(`You already watched ${films[i].title} directed by ${films[i].director}.`) :
+    console.log(`You still need to watch ${films[i].title} by director ${films[i].director}. `);
+}
+
+//11
+console.log('\n\n\n\n===========================================\n ## Question 11\n');
+/*
+console.log(`
+Given the following exert from the Declaration of Independence, find the most frequent word that is longer than 5 characters.
+
+'''js
+const declarationOfIndependence = '
+When in the Course of human events, it becomes necessary for one people to dissolve the
+political bands which have connected them with another, and to assume among the powers of the
+earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle
+them, a decent respect to the opinions of mankind requires that they should declare the causes
+which impel them to the separation.
+
+We hold these truths to be self-evident, that all men are created equal, that they are endowed by
+their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit
+of Happiness. That to secure these rights, Governments are instituted among Men, deriving
+their just powers from the consent of the governed, That whenever any Form of Government
+becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to
+institute new Government, laying its foundation on such principles and organizing its powers in
+such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence,
+indeed, will dictate that Governments long established should not be changed for light and
+transient causes; and accordingly all experience hath shewn, that mankind are more disposed to
+suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they
+are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same
+Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty,
+to throw off such Government, and to provide new Guards for their future security. Such has
+been the patient sufferance of these Colonies; and such is now the necessity which constrains
+them to alter their former Systems of Government. The history of the present King of Great
+Britain is a history of repeated injuries and usurpations, all having in direct object the
+establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a
+candid world.
+'
+'''
+\n\n`);
+*/
+
+const declarationOfIndependence = `
+When in the Course of human events, it becomes necessary for one people to dissolve the
+political bands which have connected them with another, and to assume among the powers of the
+earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle
+them, a decent respect to the opinions of mankind requires that they should declare the causes
+which impel them to the separation.
+
+We hold these truths to be self-evident, that all men are created equal, that they are endowed by
+their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit
+of Happiness. That to secure these rights, Governments are instituted among Men, deriving
+their just powers from the consent of the governed, That whenever any Form of Government
+becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to
+institute new Government, laying its foundation on such principles and organizing its powers in
+such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence,
+indeed, will dictate that Governments long established should not be changed for light and
+transient causes; and accordingly all experience hath shewn, that mankind are more disposed to
+suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they
+are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same
+Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty,
+to throw off such Government, and to provide new Guards for their future security. Such has
+been the patient sufferance of these Colonies; and such is now the necessity which constrains
+them to alter their former Systems of Government. The history of the present King of Great
+Britain is a history of repeated injuries and usurpations, all having in direct object the
+establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a
+candid world.
+`
+
+function ithMostCommonWord(str, x = 1) {
+  str = str.toLowerCase();
+  str = str.split(` `).join(`\n`).split(`\n`).join(`.`).split(`.`).join(`,`).split(`,`).join(`;`).split(`;`).join(` `);
+  let strObj = {};
+  let strArr = str.split(` `);
+  for (let i = 0; i < strArr.length; i++) {
+    let wrd = strArr[i];
+    wrd.length > 5 ?
+      strObj[strArr[i]] === undefined ? strObj[strArr[i]] = 1 : strObj[strArr[i]] += 1 :
+      null;
+  }
+
+  return objKeys(strObj)[objValues(strObj).indexOf(ithLargestNumb(objValues(strObj), x))];
+}
+
+console.log(ithMostCommonWord(declarationOfIndependence));
