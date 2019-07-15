@@ -185,9 +185,9 @@ let people = [
 let firstNames = [];
 let fullNames = [];
 
-for (let i of people){
-  firstNames.push(i.firstName);
-  let fullName = i.firstName + " " + i.lastName
+for (let person of people){
+  firstNames.push(person.firstName);
+  let fullName = person.firstName + " " + person.lastName
   fullNames.push(fullName);
 }
 console.log("First names : ", firstNames);
@@ -229,6 +229,7 @@ let alph = {
    l: 0,
    m: 0,
    n: 0,
+   o: 0,
    p: 0,
    q: 0,
    r: 0,
@@ -355,3 +356,25 @@ for (let arr of money){
 }
 console.log(stolenCents);
 console.log(sumAllCents);
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n');
+
+
+/* Question 9
+Create an object to hold information on your favorite recipe.
+It should have the following properties: name, servings, and ingredients (an array).
+Create a loop that logs the recipe information, so it looks like:
+name: Mole
+servings: 2
+ingredients: cinnamon, cumin, cocoa
+*/
+
+let recipe = {
+  "name": "Mole",
+  "servings": 2,
+  "ingredients": ["cinnamon", "cumin", "cocoa"]
+};
+
+for (let rcp in recipe){
+  console.log(rcp);
+  console.log(recipe["name"]);
+}
