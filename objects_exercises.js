@@ -86,13 +86,8 @@ let films = [
 //
 // //logs 'Alfred Hitchcock', 'Orson Welles', 'Bryan Singer'
 // ```
-for (let filmObjects = 0; filmObjects < films.length; filmObjects ++) {
-  let directors = films[filmObjects];
-  console.log(directors[1]);
-  // for (let findDirectors = 0; findDirectors < directors.length; findDirectors ++) {
-  //   let resultFilms = directors[1];
-  // console.log(resultFilms);
-// }
+for (let i = 0; i < films.length; i++) {
+  console.log(films[i].director);
 }
 
 console.log("___");
