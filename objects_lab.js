@@ -137,9 +137,11 @@
 // //
 // // You are given an array of objects. Each object in the array contains exactly 2 keys `“firstName”` and `“lastName”`
 // //
-// // ```js
-//
-//
+// // a. Create an array of strings called `firstNames`
+//that contains only the values for `“firstName”`
+// //from each object.
+//b. Create an array of strings called `fullNames` that contains the values for `“firstName”` and `“lastName”` from the object separated by a space.
+// ====================================
 // let people = [
 //     {
 //         "firstName": "Calvin",
@@ -162,37 +164,29 @@
 //         "lastName": "Bowen"
 //     }
 // ]
-
-// // a. Create an array of strings called `firstNames`
-// //that contains only the values for `“firstName”`
-// // //from each object.
-// let firstNames = [];
-// let fulltNames = [];
-//  for (i = 0; i < people.length; i++) {
-//     firstNames.push(people[i].firstName);
-//      }
-//      console.log(firstNames)
-//
-// b. Create an array of strings called `fullNames` that contains the values for `“firstName”` and `“lastName”` from the object separated by a space.
-//
 // let firstNames = [];
 // let fullNames = [];
 //  for (i = 0; i < people.length; i++) {
-//     fullNames.push(people[i].firstName+ ' ' + people[i].lastName);
-//      }
-//      console.log(fullNames)
-//=======================================================================================
-// let firstNames = [];
-// let fulltNames = [];
-//  for (i = 0; i < people.length; i++) {
 //     firstNames.push(people[i].firstName);
-//     fullNames.push(people[i].firstName+ ' ' + people[i].lastName);
 //      }
-//      console.log(fullNames);
-//      console.log(firstNames);
+//      for (i = 0; i < people.length; i++) {
+//         fullNames.push(people[i].firstName+ ' ' + people[i].lastName);
+//          }
+//          console.log(firstNames);
+//          console.log(fullNames);
+// //
+// //=======================================================================================
+//let firstNames = [];
+//let fulltNames = [];
+ // for (i = 0; i < people.length; i++) {
+ //    firstNames.push(people[i].firstName);
+ //    fullNames.push(people[i].firstName+ ' ' + people[i].lastName);
+ //     }
+ //     console.log(fullNames);
+ //     console.log(firstNames);
 
 // ## Question 7
-//
+//===============
 // Print the second most common letter in the string below:
 //
 // var myString = "We're flooding people with information.
@@ -200,60 +194,73 @@
 //   A human must turn information into intelligence or knowledge.
 //   We've tended to forget that no computer will ever ask a new question."
 //------------------------------------------------------
-// class note
-
+// class note:
+// Print the second most common letter in the string below:
+// let obj2 = {
+  // W: 1,
+  // e: 2,
+  // r: 1,
+  // e: 100
+// }
+// Iterating over the string. To get individual chars
+// Check current char to see if it's a key in obj2
+//  -> if it's not then
+//    -> create a key with the currChar in obj2
+//    -> and set the value to one. Meaning we have seen the char
+//  -> Otherwise
+//    -> increase the value that the key (currChar) is holding
 //
-
-
-//  interatin over the strings. To get individual characters
-// check cha to see if it's a key in obj2
-// --> if  it's not
-// --then creat a key with the currChar in obj2
-// --> and set the value to one. meaning we have see the char
-// --->Otherwise
-// increase
-// let str = `We're flooding people with information. We need to feed it through a processor.
+//
+// let str = `We're flooding people with information.
+// We need to feed it through a processor.
 // A human must turn information into intelligence or knowledge.
 // We've tended to forget that no computer will ever ask a new question.`
-// let obj ={
-//   // crrChar: 4
+// str = str.toLocaleLowerCase()
+// let obj = {
+//   //crrChar: 4
 // }
-// //console.log(obj.)
-// // let arrStr = str.split('')
+// // let arrStr = str.split('') //not necessary
 // for (let i = 0; i < str.length; i++) {
 //   let crrChar = str[i]
-//   if ( crrChar !== " " && crrChar !== '.'&& crrChar !=='\n' && crrChar !== '\`'
-// )
-//   if( obj[crrChar] === undefined) {
-// obj[crrChar] = 1;
-// } else {
-//   obj[crrChar]++;
-// }
-// }
-//
-// console.log(obj)
-// let mostComm = 0;
-// let mostCommCount = 0;
-//
-// let secMostComm;
-// let secMostCount = 0;
-// for (let char in obj){
-//   if (obj[char] > mostCommCount) {
-//     mostCommCount = obj[char];
-//     mostComm = char
-//   } else if (obj[char] > secMostCount){
-//     secMostCommCount = obj [ char];
-//     secMostComm = char
+//   if ( crrChar !== ' '
+//     && crrChar !== '.'
+//     && crrChar !== '\n'
+//     && crrChar !== '\''
+//   ) {
+//     if (obj[crrChar] === undefined) {
+//       obj[crrChar] = 1;
+//     } else {
+//       obj[crrChar]++;
+//     }
 //   }
 // }
+// obj['c'] = 30;
+// console.log(obj)
+// let mostComm;
+// let mostCommCount = 0;
+// let secMostComm;
+// let secMostCommCount = 0;
+// for (let char in obj) {
+//   if (obj[char] > mostCommCount) {
+//     secMostCommCount = mostCommCount
+//     secMostComm = mostComm
+//     mostComm = char
+//     mostCommCount = obj[char]
+//   } else if (obj[char] > secMostCommCount) {
+//     //secMostCommCount < mostCommCount) {
+//     console.log(`${mostComm}: ${mostCommCount} | ${secMostComm}: ${secMostCommCount} `)
 //
+//     secMostCommCount = obj[char];
+//     secMostComm = char
+//     console.log(`=> ${mostComm}: ${mostCommCount} | ${secMostComm}: ${secMostCommCount} `)
+//   }
+// }
 // console.log(mostComm)
 // console.log(mostCommCount)
+// console.log('===============')
 // console.log(secMostComm)
 // console.log(secMostCommCount)
-
-
-// for(let char of str)
+// //for(let char of str)
 //=====================================================================================
 // ## Question 8
 //===============
@@ -275,7 +282,50 @@
 //  "Johnson" : [12.56, 300.00, 640.50, 255.60, 26.88]
 // }
 // ```
-//
+let deposits = {
+    "Williams" : [300.65, 270.45, 24.70, 52.00, 99.99],
+    "Cooper" : [200.56, 55.00, 600.78, 305.15, 410.76, 35.00],
+    "Davies" : [400.98, 56.98, 300.00],
+    "Clark" : [555.23, 45.67, 99.95, 80.76, 56.99, 46.50, 265.70],
+    "Johnson" : [12.56, 300.00, 640.50, 255.60, 26.88]
+};
+// a)
+let maxPerson = '';
+let total = 0;
+for (let key in deposits) {
+    let sum = 0;
+    for(num of deposits[key]) {
+        sum += num; // Adds all the numbers in the current array
+    }
+    if (sum > total) { // Checks if current sum is > total and updates it
+        maxPerson = key;
+        total = sum;
+    }
+}
+// 8b
+let stolenCents = [];
+for (let key in deposits) {
+    for(num of deposits[key]) {
+        let hold = num - Math.floor(num); // Takes current num from array and subtracts original by its floor so ex. 1.5 - 1
+        stolenCents.push(hold); // After getting the change push into array
+    }
+}
+for (let key in deposits) {
+    let roundDown = [];
+    for (num of deposits[key]) {
+        num = Math.floor(num); // Rounds down
+        roundDown.push(num); // Pushes roudned num in arr
+    }
+    deposits[key] = roundDown; // Updates current key with rounded value
+}
+// 8c
+let stolenTotal = 0;
+for (let num of stolenCents) {
+    stolenTotal += num; // Totals all the change $$$
+}
+console.log(maxPerson);
+console.log("8b) ", "Stolen: ", stolenCents , "\n\nOriginal Object Rounded Down: ", deposits);
+console.log("8c) ", stolenTotal);
 // ## Question 9
 //
 // * Create an object to hold information on your favorite recipe. It should have the following properties: `name`, `servings`, and `ingredients` (an array).
