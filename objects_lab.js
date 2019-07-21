@@ -389,6 +389,7 @@ function myFilter(filArr,callback) {
  //console.log( myFilter(art, num => num.length > 5));
 
 
+
  function mostWord (array){
    let objDec ={};
    let mostFrequentWord;
