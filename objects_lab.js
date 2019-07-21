@@ -1,6 +1,6 @@
 // # Object Exercises
 //
-// ## Question 1
+console.log(`\nquestion #1`);
 //
 // Given the cat object below:
 
@@ -21,7 +21,7 @@ if ( cat.hasOwnProperty(cat.texture) ) {
     console.log(false);
 }
 
-// Question 2
+console.log(`\nquestion #2`);
 //
 // What will the code below log?  Explain why.
 //
@@ -35,9 +35,9 @@ if ( cat.hasOwnProperty(cat.texture) ) {
 // }
 //
 // console.log(p1 === p2)
-console.log("The code will log 'Joe' ")
+console.log("The code will log 'Joe' ")// wrong int will return false
 
-// Question 3
+console.log(`\nQuestion #3`);
 //
 // Given the object variable `spanishNumbers` below:
 //
@@ -55,8 +55,13 @@ let spanishNumbersValues = [];
 for (let key in spanishNumbers){
     spanishNumbersValues.push(spanishNumbers[key])
 }console.log(spanishNumbersValues);
-
-// Question 4
+/*
+for (ley keyin spanishNumbers){
+  spanishNumbersKeys.push(key)
+  spanishNumbersValues.push(spanishNumbers[key])
+}
+*/
+console.log(`question #4`);
 //
 // Write a code block the logs the number of properties an object has.
 let spainArray = []
@@ -68,7 +73,7 @@ for (let key in spanishNumbers){
 } console.log(spainArray.length);
 
 
-// Question 5
+console.log(`Question #5`);
 //
 // Loop through the following object and log all of the directors.
 //
@@ -94,7 +99,8 @@ for (i = 0; i< films.length; i++){
     console.log(films[i].director);
 }
 console.log('---------')
-// ## Question 6
+
+console.log(`\n# Question 6`);
 //
 // You are given an array of objects. Each object in the array contains exactly 2 keys `“firstName”` and `“lastName”`
 //
@@ -136,7 +142,7 @@ for (i =0; i < people.length; i++){
 
 }console.log(fullNames);
 
-// Question 7
+console.log(`\nQuestion #7`);
 // Print the second most common letter in the string below:
 let obj2 ={}
 //iterating over the string. To get individual character
@@ -147,6 +153,7 @@ let obj2 ={}
  var myString = "We're flooding people with information. We need to feed it through a processor. A human must turn information into intelligence or knowledge. We've tended to forget that no computer will ever ask a new question."
 // set for loop to loop through the string to check and push character into object
 myString =myString.toLowerCase();
+
 for (let i = 0; i< myString.length; i++){
   let currChar = myString[i];
   //console.log(currChar);
@@ -187,7 +194,6 @@ for (let letter in obj2){
 }
 console.log(`The most common character is: ${mostCommon} with a count of ${mostCommonCount}`);
 console.log(`The second most common character is ${secondMost} withg a count of ${secondMostCount} `);
-console.log('==========');
 /*
 alternate still working on
 let mostComm;
@@ -223,9 +229,9 @@ for (let char in obj) {
 
 //   str.forEach(function(elem))
 // }
-// Question 8
+console.log(`\nQuestion #8`);
 let deposits = {
- "Williams" : [300.65, 270.45, 24.70, 52.00, 99.99,],
+ "Williams" : [300.65, 270.45, 24.70, 52.00, 99.99],
  "Cooper" : [200.56, 55.00, 600.78, 305.15, 410.76, 35.00],
  "Davies" : [400.98, 56.98, 300.00,],
  "Clark" : [555.23, 45.67, 99.95, 80.76, 56.99, 46.50, 265.70,],
@@ -235,36 +241,54 @@ let deposits = {
 // You are given the object `deposits`, which maps a persons name to an array of deposits that have been made to their account.
 //
 // a) Write code to to print the name and total amount deposited of the person who received the most money.
-let max =0
-let maxPerson = ''
-let total=0;
+// let max =0
+// let maxPerson = ''
+// let total=0;
+function depoSum (inArr) {
+  let total =0;
 for (let key in deposits){
   for( let i =0; i < deposits[key].length; i++){
         total += deposits[key][i]
 
-  } if (total > max){
-    max = total;
-    maxPerson= key
   }
-
+ }
+ return total
 }
-console.log(maxPerson);
+//console.log(depoSum(deposits));
+
+function depObj(array) {
+  let depoArr = [];
+  for (let key in deposits){
+
+  }
+}
+
+
 
 // b) Create an array called `stolenCents`, iterate over deposits for each person and steal their cents! ... like Office Space or Superman 3. Calculate the decimal part of each value, add it to the `stolenCents` array and round down the value in the original object.
-// let cents =[];
-// for (let key in deposits){
-//   for( let i =0; i < deposits[key].length; i++) {
-//         let flr = Math.floor(deposits[key][i]);
-//         cents.push(flr)
-//   }
-//
-// }
-// console.log(cents);
+function steal(stealObj) {
+  let cents =[];
+  // let decimal=(deposits[key][i]- Math.floor(deposits[key][i])).toFixed(2);
+  for (let key in deposits){
+    for( let i =0; i < deposits[key].length; i++) {
+      let decimal=(deposits[key][i]- Math.floor(deposits[key][i])).toFixed(2);
+          //let flr = Math.floor(deposits[key][i]);
+          cents.push(Number(decimal))
+          deposits[key]-= (deposits[key][i]- Math.floor(deposits[key][i])).toFixed(2);
+    }
+
+  }
+   return cents;
+}
+ console.log(steal(deposits));
+
+
+ // console.log(cents);
 //c) How much money did you steal?
 
 
 //
-// ## Question 9
+console.log(`\n# Question 9`);
 //
 // * Create an object to hold information on your favorite recipe. It should have the following properties: `name`, `servings`, and `ingredients` (an array).
 // * Create a loop that logs the recipe information, so it looks like:
@@ -283,13 +307,14 @@ let favRecipe = {
 for (let jerk in favRecipe){
       console.log(`${jerk} : ${favRecipe[jerk]}`);
 }
-// ## Question 10
+
+
+console.log(`\n# Question 10`);
 // * Create an array of films, where each film has the following properties: title, director, and a boolean indicating if you started watching it.
 // * Create a code block that iterates over the array and logs whether the film was watched or not. Examples:
 //
 // `You already watched "Wonder Woman" directed by Patty Jenkins`
 // `You still need to watch "Wonder Woman" by director Patty Jenkins. `
-console.log('------------')
 let cinema = [
     {
       title: 'Spider-man: Into the Spiderverse',
@@ -315,7 +340,8 @@ for (let i=0; i< cinema.length; i++){
     }
 }
 
-// ## Question 11
+
+console.log(`\nQuestion # Question 11`);
 //
 // Given the following exert from the Declaration of Independence, find the most frequent word that is longer than 5 characters.
 //
@@ -346,36 +372,40 @@ for (let i=0; i< cinema.length; i++){
   establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a
   candid world.
   `;
+
 // ```
-let indSplit = declarationOfIndependence.split(' ')
-let words = []
-let decObj= {};
-words.push(indSplit);
-//console.log(words)
-for (let i = 0; i< words.length; i++){
-  let currWord = words[i];
-  //console.log(currChar);
-  if (currWord !== ' ' && currWord !=='.' && currWord !== "'"){
-    if (decObj[currWord] === undefined){
-        decObj[currWord] = 1
-  } else {
-    decObj[currWord]++
+let art = declarationOfIndependence.split(' ');
+
+
+function myFilter(filArr,callback) {
+  let arrResult =[];
+  for (let i = 0; i <filArr.length; i++){
+    if (callback(filArr[i])){
+      arrResult.push(filArr[i])
+    }
   }
+  return arrResult;
 }
-} console.log(decObj);
+ //console.log( myFilter(art, num => num.length > 5));
 
 
+ function mostWord (array){
+   let objDec ={};
+   let mostFrequentWord;
+   let counter =0;
+    for(let i = 0; i < array.length; i++){
+        let word = array[i];
+        if(objDec[word] === undefined){
+            objDec[word] = 1;
+        }else{
+            objDec[word] +=1;
+        }
+        if(objDec[word] > counter){
+              counter = objDec[word];
+              mostFrequentWord = array[i];
+        }
+     }
+   return mostFrequentWord;
+ }
 
-
-// h
-// for (let i =0; i <words.length; i++){
-//         let currWord = words[i]
-//       //console.log(words)
-//     if (currChar !== ' ' && currChar !=='.' && currChar !== "'"){
-//         if (decObj[currWord] === undefined){
-//             decObj[currWord = 1
-//             } else {
-//         decObj[currWord]++
-//          }
-//    }
-// }console.log(decObj);
+console.log(mostWord(myFilter(art, num => num.length > 5)));
