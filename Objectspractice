@@ -1,0 +1,24 @@
+let gotObj = {
+  Lannisters: { Jamie: '40', Cersei: '40', Tyrion: '35', Tywin: '70'},
+  Starks: {Arya: '18', Jon:'32', Sansa: '29'}
+}
+// array has normal brackets and objects have curly brackets{}
+console.log(gotObj['Starks']) // console.log(gotObj.Starks)
+bracket [] and dot . notations to call through a key in an object
+for OF loop for arrays and strings for(let item of)
+//for IN loop is for objects for(let item in)
+for(let family in gotObj) {
+  console.log(family)
+} // this loop calls out the keys for the object
+Object.keys(gotObj) // will give you the first set of keys in the object
+Object.values(gotObj) // will give you the keys and values
+console.log(Object.values(gotObj))
+
+for(let family in gotObj) {
+  console.log(Object.values(family))
+ }
+console.log(gotObj.Lannisters.Jamie)
+for (let family in gotObj) {
+  console.log(Object.keys(family))
+  console.log(Object.keys(gotObj))
+}
