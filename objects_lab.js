@@ -241,48 +241,62 @@ let deposits = {
 // You are given the object `deposits`, which maps a persons name to an array of deposits that have been made to their account.
 //
 // a) Write code to to print the name and total amount deposited of the person who received the most money.
-// let max =0
-// let maxPerson = ''
-// let total=0;
-function depoSum (inArr) {
-  let total =0;
+
+let trt =[];
 for (let key in deposits){
-  for( let i =0; i < deposits[key].length; i++){
-        total += deposits[key][i]
-
-  }
- }
- return total
+   trt.push(Math.floor(deposits[key].reduce((acc,curel) =>{
+    return acc + curel;
+  })))
 }
-//console.log(depoSum(deposits));
+  //console.log(trt)
+  let empArr =[];
+  empArr =Object.keys(deposits)
 
-function depObj(array) {
-  let depoArr = [];
-  for (let key in deposits){
-
-  }
+  const findingIndex = (arr) =>{
+  return ( arr.reduce((el,curel) => {
+    if (el > curel){
+    return el
+      } else {
+    return curel
+      }
+ }))
+//trt.indexOf(findingIndex(trt))
 }
+//console.log(trt.indexOf(findingIndex(trt)))
+  
+ console.log(`The person with the most money in the bank is ${empArr[trt.indexOf(findingIndex(trt))]}.`) 
 
 
 
 // b) Create an array called `stolenCents`, iterate over deposits for each person and steal their cents! ... like Office Space or Superman 3. Calculate the decimal part of each value, add it to the `stolenCents` array and round down the value in the original object.
-function steal(stealObj) {
-  let cents =[];
+// function steal(stealObj) {
+//   let cents =[];
   // let decimal=(deposits[key][i]- Math.floor(deposits[key][i])).toFixed(2);
-  for (let key in deposits){
-    for( let i =0; i < deposits[key].length; i++) {
-      let decimal=(deposits[key][i]- Math.floor(deposits[key][i])).toFixed(2);
-          //let flr = Math.floor(deposits[key][i]);
-          cents.push(Number(decimal))
-          deposits[key]-= (deposits[key][i]- Math.floor(deposits[key][i])).toFixed(2);
-    }
+  // let names = object.keys(deposits)
+  // for (let key in deposits){
+  //   for( let i =0; i < deposits[key].length; i++) {
+  //     let decimal=(deposits[key][i]- Math.floor(deposits[key][i])).toFixed(2);
+  //         //let flr = Math.floor(deposits[key][i]);
+  //         cents.push(Number(decimal))
+  //         deposits[key]-= (deposits[key][i]- Math.floor(deposits[key][i])).toFixed(2);
+  //   }
+  //
+  // }
+  //  return cents;
+//}
+ //console.log(steal(deposits));
 
-  }
-   return cents;
-}
- console.log(steal(deposits));
+// let objMain ={}
+// let names = Object.keys(deposits)
+// names.forEach(name => {
+//     for( let i =0; i < deposits[names].length; i++) {
+//       let decimal=(deposits[names][i]- Math.floor(deposits[names][i])).toFixed(2);
+//           //let flr = Math.floor(deposits[key][i]);
+//           cents.push(Number(decimal))
+//           deposits[key]-= (deposits[names][i]- Math.floor(deposits[names][i])).toFixed(2);
 
-
+//   }
+// })
  // console.log(cents);
 //c) How much money did you steal?
 
