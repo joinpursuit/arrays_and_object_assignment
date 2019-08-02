@@ -244,9 +244,9 @@ let deposits = {
 
 let trt =[];
 for (let key in deposits){
-   trt.push(Math.floor(deposits[key].reduce((acc,curel) =>{
+   trt.push(deposits[key].reduce((acc,curel) =>{
     return acc + curel;
-  })))
+  }))
 }
   //console.log(trt)
   let empArr =[];
@@ -268,37 +268,31 @@ for (let key in deposits){
 
 
 
-// b) Create an array called `stolenCents`, iterate over deposits for each person and steal their cents! ... like Office Space or Superman 3. Calculate the decimal part of each value, add it to the `stolenCents` array and round down the value in the original object.
-// function steal(stealObj) {
-//   let cents =[];
-  // let decimal=(deposits[key][i]- Math.floor(deposits[key][i])).toFixed(2);
-  // let names = object.keys(deposits)
-  // for (let key in deposits){
-  //   for( let i =0; i < deposits[key].length; i++) {
-  //     let decimal=(deposits[key][i]- Math.floor(deposits[key][i])).toFixed(2);
-  //         //let flr = Math.floor(deposits[key][i]);
-  //         cents.push(Number(decimal))
-  //         deposits[key]-= (deposits[key][i]- Math.floor(deposits[key][i])).toFixed(2);
-  //   }
-  //
-  // }
-  //  return cents;
-//}
- //console.log(steal(deposits));
+console.log( `\nb) Create an array called 'stolenCents', iterate over deposits for each person and steal their cents!
+like Office Space or Superman 3. Calculate the decimal part of each value, add it to the 'stolenCents' 
+array and round down the value in the original object.`);
 
-// let objMain ={}
-// let names = Object.keys(deposits)
-// names.forEach(name => {
-//     for( let i =0; i < deposits[names].length; i++) {
-//       let decimal=(deposits[names][i]- Math.floor(deposits[names][i])).toFixed(2);
-//           //let flr = Math.floor(deposits[key][i]);
-//           cents.push(Number(decimal))
-//           deposits[key]-= (deposits[names][i]- Math.floor(deposits[names][i])).toFixed(2);
+  function getDecimal(obj) {
+    let stolenCents=[]
+    for (let key in obj){
+      stolenCents.push(obj[key].map((el => {
+         return Number((el - Math.floor(el)).toFixed(2))
+      })))
+    }
+    let all =[];
+    stolenCents.forEach(el => 
+      all = all.concat(el))
+  
+    return all.reduce((acc,curel)=>{
+        return acc +curel
+      })
+  }
+  
+  console.log(getDecimal(deposits))
 
-//   }
-// })
- // console.log(cents);
-//c) How much money did you steal?
+
+  console.log('\nc) How much money did you steal?');
+console.log(`I stole $${getDecimal(deposits)} from the bank accounts`);
 
 
 //
