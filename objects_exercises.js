@@ -96,32 +96,40 @@ console.log("___");
 // You are given an array of objects. Each object in the array contains exactly 2 keys `“firstName”` and `“lastName”`
 //
 // ```js
-// let people = [
-//     {
-//         "firstName": "Calvin",
-//         "lastName": "Newton"
-//     },
-//     {
-//         "firstName": "Garry",
-//         "lastName": "Mckenzie"
-//     },
-//     {
-//         "firstName": "Leah",
-//         "lastName": "Rivera"
-//     },
-//     {
-//         "firstName": "Sonja",
-//         "lastName": "Moreno"
-//     },
-//     {
-//         "firstName": "Noel",
-//         "lastName": "Bowen"
-//     }
-// ]
+let people = [
+    {
+        "firstName": "Calvin",
+        "lastName": "Newton"
+    },
+    {
+        "firstName": "Garry",
+        "lastName": "Mckenzie"
+    },
+    {
+        "firstName": "Leah",
+        "lastName": "Rivera"
+    },
+    {
+        "firstName": "Sonja",
+        "lastName": "Moreno"
+    },
+    {
+        "firstName": "Noel",
+        "lastName": "Bowen"
+    }
+]
 // ```
 // a. Create an array of strings called `firstNames` that contains only the values for `“firstName”` from each object.
+for (let i = 0; i < people.length; i++) {
+  let first = [people[i].firstName];
+  console.log(first);
+}
+console.log("___");
 // b. Create an array of strings called `fullNames` that contains the values for `“firstName”` and `“lastName”` from the object separated by a space.
-//
+for (let i = 0; i < people.length; i++) {
+  let fullNames = [(people[i].firstName) + " " + (people[i].lastName)];
+  console.log(fullNames);
+}
 //
 // ## Question 7
 //
